@@ -1,0 +1,812 @@
+:root {
+  /* CORES – Dark premium */
+  --bg-main: radial-gradient(circle at top, #0f1429, #05070f 70%);
+  --bg-card: rgba(20, 24, 40, 0.72);
+  --bg-soft: rgba(28, 32, 52, 0.65);
+
+  --primary: #7aa2ff;
+  --secondary: #3fffdc;
+  --accent: #ffd166;
+
+  --text-main: #f5f7fb;
+  --text-muted: #a9b0c2;
+
+  --border-soft: rgba(255,255,255,0.08);
+  --shadow-soft: 0 30px 80px rgba(0,0,0,0.65);
+
+  --blur: blur(18px);
+
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.formula {
+  background-color: rgba(122, 162, 255, 0.15); /* leve fundo azul */
+  border-left: 5px solid #7aa2ff; /* barra lateral colorida */
+  padding: 15px 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace; /* estilo matemático */
+  color: #f5f7fb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CONTAINER DE ATENÇÃO ===== */
+.attention {
+  background-color: #ffefc2; /* amarelo claro */
+  border-left: 6px solid #ffb400; /* barra de destaque */
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #5a4a00;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== EXERCÍCIOS ===== */
+ol {
+  counter-reset: item;
+  margin: 16px 0 32px 20px;
+  padding: 0;
+  list-style: none;
+}
+
+ol li {
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: rgba(122, 162, 255, 0.1); /* azul suave */
+  border-radius: 8px;
+  border-left: 4px solid #7aa2ff;
+}
+
+/* ===== TITULOS DENTRO DO EXERCÍCIO ===== */
+ol li strong {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* ===== SISTEMA DE EQUAÇÕES ===== */
+ol li br + strong {
+  display: block;
+  margin-top: 12px;
+}
+
+ol li code, ol li pre {
+  display: block;
+  background-color: rgba(0,0,0,0.05);
+  padding: 6px 10px;
+  margin: 6px 0;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* ===== RESOLUÇÃO ===== */
+ol li p, ol li {
+  line-height: 1.6;
+}
+
+/* ===== RESPONDA ===== */
+ol li strong:contains("Resposta") {
+  color: #0077ff;
+  font-size: 1.1em;
+}
+/* ===== TÍTULOS DOS ERROS ===== */
+
+h3 {
+  background-color: rgba(122, 162, 255, 0.08); /* azul mais suave */
+  border-left: 4px solid #7aa2ff; /* menos pesado que 6px */
+  padding: 8px 12px; /* menor espaçamento */
+  border-radius: 4px;
+  margin-top: 16px; /* reduz espaço superior */
+  margin-bottom: 8px; /* reduz espaço inferior */
+  font-size: 1.1em; /* tamanho menor para subtópico */
+  font-weight: 600; /* mantém destaque, mas mais leve */
+  color: #1a2a55; /* azul escuro mais suave */
+}
+/* ===== PARÁGRAFOS ===== */
+p {
+  margin-bottom: 12px;
+  padding-left: 8px;
+  line-height: 1.6;
+}
+
+/* ===== LISTAS ===== */
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style: none; /* remove bullets padrão */
+}
+
+/* ===== ITENS DA LISTA ===== */
+li {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-left: 4px solid #3fffdc; /* barra de destaque */
+  border-radius: 4px;
+}
+
+/* ===== STRONG PARA CATEGORIAS ===== */
+li strong {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* ===== CORES PARA EXEMPLOS E ORIENTAÇÕES ===== */
+li strong:contains("Como evitar") {
+  color: #0077ff; /* azul */
+}
+
+li strong:contains("Exemplo incorreto") {
+  color: #ff4d4d; /* vermelho */
+}
+
+li strong:contains("Exemplo correto") {
+  color: #00b300; /* verde */
+}
+.formula strong {
+  color: #7aa2ff;
+}
+
+.formula em  {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-style: oblique; /* mantém o texto normal dentro da ênfase */
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: clamp(16px, 4vw, 32px);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+/* ================= SCROLL CUSTOMIZADO ================= */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.3);
+}
+
+/* ================= TIPOGRAFIA ================= */
+h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 14px;
+  transition: all 0.35s ease-in-out;
+  animation: gradientMove 6s ease infinite;
+}
+
+h1:hover {
+  filter: drop-shadow(0 0 8px var(--secondary));
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin: 80px 0 26px;
+  padding-left: 18px;
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(270deg, var(--primary), var(--secondary), var(--accent));
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem); /* leve ajuste de tamanho */
+  margin: 24px 0 12px; 
+  font-weight: 600; /* menos pesado para não chamar demais atenção */
+  color: var(--primary); /* cor principal mais suave */
+  text-transform: none; /* não precisa de uppercase para exemplos */
+  letter-spacing: 0.5px;
+  position: relative;
+
+  /* Gradiente leve apenas no hover */
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: var(--primary);
+
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover suave para exemplos */
+h3:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.02);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+/* ================= LISTAS ================= */
+section ul {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+section ul li strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+section ul li strong::after {
+  content: " → ";
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ================= HEADER ================= */
+header {
+  max-width: 960px;
+  margin: 40px auto 70px;
+  padding: clamp(26px, 5vw, 46px);
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  border-radius: 32px;
+  border: 1px solid var(--border-soft);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.65);
+}
+
+header i {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ================= EIXO BOX ================= */
+.eixo-box {
+  position: relative;
+  overflow: hidden;
+  max-width: clamp(280px, 80%, 500px);
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  text-align: center;
+  font-family: "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+
+  /* Glassmorphism + gradiente */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  /* Sombra e destaque */
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+
+  /* Gradiente animado */
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  background-size: 200% 200%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Gradiente animado em pseudo-elemento */
+.eixo-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, #4e73df, #1cc88a, #36b9cc, #f6c23e);
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+  z-index: 0;
+  opacity: 0.2;
+  border-radius: 28px;
+}
+
+/* Hover com leve 3D e brilho */
+.eixo-box:hover {
+  transform: translateY(-10px) rotateX(1deg) rotateY(1deg) scale(1.03);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* Conteúdo acima da animação */
+.eixo-box * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pequenas melhorias de tipografia dentro do box */
+.eixo-box h4, .eixo-box strong {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.eixo-box p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover com efeito 3D e brilho */
+.eixo-box:hover {
+  transform: translateY(-12px) rotateX(2deg) rotateY(2deg) scale(1.03);
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.65);
+}
+
+/* Conteúdo acima da animação */
+.eixo-box * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= SEÇÕES ================= */
+section {
+  max-width: 960px;
+  margin: 0 auto 80px;
+  padding: 0 16px;
+}
+
+/* ================= EXEMPLOS ================= */
+.exemplo {
+  background: linear-gradient(
+    135deg,
+    rgba(122,162,255,0.08),
+    rgba(63,255,220,0.06)
+  );
+  padding: 32px;
+  border-radius: 26px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: var(--blur);
+}
+
+.exemplo h3 {
+  color: var(--primary);
+}
+
+/* ================= QUESTÕES ================= */
+.questao {
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: 28px;
+  margin: 60px auto;
+  border-left: 6px solid var(--primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.questao h3 {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.questao p {
+  margin-bottom: 24px;
+}
+
+.questao ul {
+  display: grid;
+  gap: 14px;
+}
+
+/* ================= OPÇÕES ================= */
+.opcao {
+  padding: 14px 18px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid #444;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+.opcao:hover {
+  transform: translateX(6px) scale(1.02);
+  background: rgba(122,162,255,0.15);
+  box-shadow: 0 4px 20px rgba(122,162,255,0.35), 0 0 12px rgba(63,255,220,0.25);
+}
+
+.opcao.correta {
+  background-color: #1e7f43;
+  border-color: #2ecc71;
+  color: #ffffff;
+  animation: glowCorrect 0.8s ease-in-out;
+}
+
+.opcao.errada {
+  background-color: #8b1e1e;
+  border-color: #e74c3c;
+  color: #ffffff;
+  animation: shake 0.5s ease-in-out;
+}
+
+.opcao.desativada {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+@keyframes glowCorrect {
+  0% { box-shadow: 0 0 8px #2ecc71; }
+  50% { box-shadow: 0 0 20px #2ecc71; }
+  100% { box-shadow: 0 0 8px #2ecc71; }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+/* ================= FEEDBACK ================= */
+.feedback {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ================= RESULTADO ================= */
+.resultado-final {
+  margin: 80px auto;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); text-shadow: 0 0 8px var(--accent); }
+  100% { transform: scale(1.05); text-shadow: 0 0 20px var(--accent); }
+}
+
+/* ================= TEXTAREA ================= */
+textarea {
+  width: 100%;
+  min-height: 260px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-soft);
+  background: rgba(6, 9, 18, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(122,162,255,0.25);
+}
+
+/* ================= BOTÕES ================= */
+button,
+.toggle-btn {
+  padding: 14px 40px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001018;
+  box-shadow: 0 20px 50px rgba(63,255,220,0.25);
+  transition: var(--transition-slow);
+}
+
+button:hover,
+.toggle-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(63,255,220,0.45);
+}
+
+/* ================= CARDS ================= */
+.curso {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  padding: 34px;
+  border-radius: 30px;
+  border-left: 5px solid var(--primary);
+  margin: 50px auto;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.curso:hover {
+  transform: translateY(-6px) rotateY(2deg) rotateX(1deg);
+  box-shadow: 0 50px 100px rgba(0,0,0,0.7);
+}
+
+/* ================= MENU LATERAL ================= */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 3000;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.15);
+  color: var(--secondary);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 80vw;
+  max-width: 360px;
+  background: linear-gradient(180deg, rgba(8,12,24,0.96) 0%, rgba(12,18,36,0.95) 100%);
+  backdrop-filter: blur(16px);
+  animation: bgMove 15s linear infinite;
+  padding: 32px 24px;
+  box-shadow: 12px 0 40px rgba(0,0,0,0.85);
+  transition: left 0.45s cubic-bezier(.4,0,.2,1);
+  z-index: 2500;
+  overflow-y: auto;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+#menu-toggle:checked ~ .menu-lateral {
+  left: 0;
+}
+
+.menu-lateral h2 {
+  margin-bottom: 24px;
+  color: var(--primary);
+}
+
+.menu-lateral a {
+  display: block;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.menu-lateral a:hover {
+  background: rgba(122,162,255,0.18);
+  transform: translateX(6px);
+}
+
+/* ================= SECTION-BOX EXERCICIOS ================= */
+.section-box.exercicios {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  border-radius: 28px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  max-width: 960px;
+  width: 100%;
+  margin: 60px auto;
+  padding: 32px;
+  transition: var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+}
+
+.section-box.exercicios:hover {
+  transform: translateY(-6px) rotateY(2deg) rotateX(1deg) scale(1.01);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.65);
+}
+
+/* ================= RESPONSIVO ================= */
+/* Estilos gerais para desktop (padrão) */
+.section-box.exercicios {
+  padding: 40px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-box.exercicios h3 {
+  font-size: 1.4rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.section-box.exercicios .opcao {
+  font-size: 1rem;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+  .section-box.exercicios {
+    padding: 32px 24px;
+  }
+
+  .section-box.exercicios h3 {
+    font-size: 1.3rem;
+  }
+
+  .section-box.exercicios .opcao {
+    font-size: 0.95rem;
+    padding: 14px 18px;
+  }
+}
+
+/* Smartphones grandes e médios */
+@media (max-width: 600px) {
+  .section-box.exercicios {
+    padding: 24px 16px;
+    width: 100%;
+  }
+
+  .section-box.exercicios h3 {
+    font-size: 1.2rem;
+  }
+
+  .section-box.exercicios .opcao {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+}
+
+/* Smartphones pequenos e telas muito estreitas */
+@media (max-width: 400px) {
+  .section-box.exercicios {
+    padding: 16px 12px;
+  }
+
+  .section-box.exercicios h3 {
+    font-size: 1.1rem;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .section-box.exercicios .opcao {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+}
+
+/* ===== TABELA MODERNA ===== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 40px 0;
+  background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.95rem;
+}
+
+thead {
+  background: linear-gradient(
+    135deg,
+    rgba(122,162,255,0.25),
+    rgba(63,255,220,0.18)
+  );
+}
+
+thead th {
+  padding: 18px 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+tbody tr {
+  transition: var(--transition-fast);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.03);
+}
+
+tbody tr:hover {
+  background: rgba(122,162,255,0.12);
+}
+
+tbody td {
+  padding: 16px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tfoot td {
+  padding: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(255,209,102,0.08);
+  border-top: 1px solid var(--border-soft);
+}
+
+.table-destaque thead {
+  background: linear-gradient(
+    135deg,
+    rgba(63,255,220,0.35),
+    rgba(122,162,255,0.25)
+  );
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 24px;
+}

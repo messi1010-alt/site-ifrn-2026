@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos Técnicos IFRN</title>
+<link rel="stylesheet" href="style.css">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-btn">☰</label>
+
+  <nav class="menu-lateral">
+    <h2>Menu</h2>
+    <a href="index.html">Início</a>
+    <a href="portugues.html">Língua Portuguesa</a>
+    <a href="matematica.html">Matemática</a>
+    <a href="redacao.html">Redação</a>
+      <a href="cursos.tecnico.html">Cursos Técnicos</a>
+  </nav>
+<style>
+:root {
+  /* ===== CORES ===== */
+  --color-text: #f5f7fb;
+  --color-text-muted: #b6bccb;
+  --color-text-soft: #d0d5e2;
+
+  --color-bg-main: radial-gradient(circle at top, #0f1429, #05070f 70%);
+  --color-bg-card: rgba(20, 24, 40, 0.75);
+  --color-bg-soft: rgba(28, 32, 52, 0.65);
+
+  --color-primary: #7aa2ff;
+  --color-secondary: #3fffdc;
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, Arial, sans-serif;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-bg-main);
+  scroll-behavior: smooth;
+}
+
+/* ===== LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-primary);
+  outline: none;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(14px);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  margin-left: 26px;
+  font-size: 0.95rem;
+  color: #a9b0c2;
+}
+
+nav a:hover, nav a:focus, nav a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ===== MAIN ===== */
+main {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* ===== CARDS DOS CURSOS ===== */
+.curso {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 24px 28px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(63,255,220,0.35);
+}
+
+.curso h3 {
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+}
+
+.curso ul {
+  margin-top: 12px;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.curso ul li {
+  margin-bottom: 6px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(12px);
+  padding: 22px 16px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  margin: 50px auto 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 18px;
+    margin-top: 8px;
+  }
+
+  main {
+    padding: 30px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    margin-right: 12px;
+    font-size: 0.85rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER COM MENU GLOBAL -->
+<header>
+  <h1>Cursos Técnicos IFRN</h1>
+</header>
+
+<!-- MAIN COM CARDS DOS CURSOS -->
+<!-- MAIN COM CARDS DOS CURSOS -->
+<main>
+
+  <section id="informatica" class="curso">
+    <h3>Curso Técnico em Informática</h3>
+    <p><strong>Carga horária:</strong> 4040 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      O curso técnico em Informática forma profissionais aptos a atuar no desenvolvimento de sistemas,
+      programação, manutenção de computadores e suporte em redes, com foco em soluções tecnológicas
+      eficientes e éticas.
+    </p>
+    <ul>
+      <li>Desenvolvimento de sistemas e programação</li>
+      <li>Manutenção de computadores e periféricos</li>
+      <li>Redes de computadores e suporte técnico</li>
+      <li>Noções de banco de dados e segurança da informação</li>
+    </ul>
+  </section>
+
+  <section id="msi" class="curso">
+    <h3>Curso Técnico em Manutenção e Suporte em Informática</h3>
+    <p><strong>Carga horária:</strong> 4100 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      Voltado para a área de infraestrutura tecnológica, este curso capacita o aluno para realizar
+      manutenção preventiva e corretiva de computadores, instalação de sistemas e atendimento ao usuário.
+    </p>
+    <ul>
+      <li>Diagnóstico e conserto de computadores</li>
+      <li>Instalação e configuração de sistemas operacionais</li>
+      <li>Suporte técnico e atendimento ao usuário</li>
+      <li>Noções de redes e segurança básica</li>
+    </ul>
+  </section>
+
+  <section id="mecanica" class="curso">
+    <h3>Curso Técnico em Mecânica</h3>
+    <p><strong>Carga horária:</strong> 4100 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      O curso técnico em Mecânica prepara profissionais para atuar na indústria, desenvolvendo
+      habilidades em montagem, manutenção e operação de sistemas mecânicos, sempre seguindo normas
+      técnicas e de segurança.
+    </p>
+    <ul>
+      <li>Leitura e interpretação de desenhos mecânicos</li>
+      <li>Montagem e manutenção de componentes e máquinas</li>
+      <li>Processos de fabricação e usinagem</li>
+      <li>Práticas em oficinas e laboratórios</li>
+    </ul>
+  </section>
+
+  <section id="refrigeracao" class="curso">
+    <h3>Curso Técnico em Refrigeração e Climatização</h3>
+    <p><strong>Carga horária:</strong> 4010 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      Este curso forma técnicos capacitados para atuar na instalação, manutenção e operação de sistemas
+      de refrigeração e climatização, tanto em ambientes residenciais quanto comerciais e industriais.
+    </p>
+    <ul>
+      <li>Sistemas de refrigeração domésticos e comerciais</li>
+      <li>Montagem e manutenção de circuitos frigoríficos</li>
+      <li>Climatização de ambientes</li>
+      <li>Segurança no trabalho e uso de ferramentas específicas</li>
+    </ul>
+  </section>
+
+  <section id="edificacoes" class="curso">
+    <h3>Curso Técnico em Edificações</h3>
+    <p><strong>Carga horária:</strong> 4100 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      O curso técnico em Edificações capacita profissionais para atuar no planejamento, execução e
+      acompanhamento de obras, auxiliando engenheiros e arquitetos em projetos e construções.
+    </p>
+    <ul>
+      <li>Planejamento e execução de obras</li>
+      <li>Leitura e interpretação de projetos e plantas</li>
+      <li>Orçamentação e controle de materiais</li>
+      <li>Fiscalização e acompanhamento de serviços</li>
+    </ul>
+  </section>
+
+  <section id="meio-ambiente" class="curso">
+    <h3>Curso Técnico em Meio Ambiente</h3>
+    <p><strong>Carga horária:</strong> 3905 horas</p>
+    <p><strong>Duração:</strong> 4 anos</p>
+    <p>
+      O curso técnico em Meio Ambiente forma profissionais comprometidos com a sustentabilidade,
+      capacitados para atuar no monitoramento ambiental, preservação dos recursos naturais e
+      desenvolvimento de projetos ambientais.
+    </p>
+    <ul>
+      <li>Coleta e análise de dados ambientais</li>
+      <li>Monitoramento de ecossistemas</li>
+      <li>Gestão e preservação dos recursos naturais</li>
+      <li>Execução de projetos ambientais e educativos</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 IFRN - Todos os direitos reservados
+</footer>
+
+<!-- JS PARA LINK ATIVO -->
+<script>
+const sections = document.querySelectorAll("main section");
+const navLinks = document.querySelectorAll("header nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+  });
+});
+</script>
+
+</body>
+</html>
