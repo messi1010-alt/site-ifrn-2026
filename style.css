@@ -244,14 +244,6 @@ h3 {
   transition: all 0.3s ease-in-out;
 }
 
-/* Hover suave para exemplos */
-h3:hover {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.02);
-  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
 
 p {
   font-size: 1rem;
@@ -665,81 +657,187 @@ button:hover,
   box-shadow: 0 40px 90px rgba(0,0,0,0.65);
 }
 
-/* ================= RESPONSIVO ================= */
-/* Estilos gerais para desktop (padrão) */
-.section-box.exercicios {
-  padding: 40px 32px;
-  max-width: 900px;
-  margin: 0 auto;
+/* ================= BASE RESPONSIVA ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.section-box.exercicios h3 {
-  font-size: 1.4rem;
-  margin-top: 24px;
-  margin-bottom: 12px;
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
 }
 
-.section-box.exercicios .opcao {
-  font-size: 1rem;
-  padding: 16px 20px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+/* Containers principais sempre fluidos */
+section,
+header,
+.section-box,
+.section-box.exercicios,
+.curso,
+.questao {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Tablets e telas médias */
+/* ================= DESKTOP GRANDE ================= */
+@media (min-width: 1200px) {
+  body {
+    padding: 40px;
+  }
+
+  section {
+    padding: 0 24px;
+  }
+
+  .section-box.exercicios {
+    padding: 40px;
+  }
+}
+
+/* ================= NOTEBOOK / DESKTOP PADRÃO ================= */
+@media (max-width: 1200px) {
+  body {
+    padding: 28px;
+  }
+
+  .section-box.exercicios {
+    padding: 32px;
+  }
+}
+
+/* ================= TABLET ================= */
 @media (max-width: 900px) {
-  .section-box.exercicios {
-    padding: 32px 24px;
+  body {
+    padding: 22px;
   }
 
-  .section-box.exercicios h3 {
-    font-size: 1.3rem;
+  header {
+    padding: 28px;
+    border-radius: 24px;
   }
 
-  .section-box.exercicios .opcao {
+  section {
+    margin-bottom: 60px;
+  }
+
+  .section-box.exercicios,
+  .curso,
+  .questao {
+    padding: 26px;
+  }
+
+  .opcao {
+    padding: 14px 16px;
     font-size: 0.95rem;
-    padding: 14px 18px;
+  }
+
+  button,
+  .toggle-btn {
+    padding: 12px 28px;
+  }
+
+  textarea {
+    min-height: 220px;
   }
 }
 
-/* Smartphones grandes e médios */
+/* ================= CELULAR GRANDE ================= */
 @media (max-width: 600px) {
-  .section-box.exercicios {
-    padding: 24px 16px;
+  body {
+    padding: 16px;
+    line-height: 1.6;
+  }
+
+  header {
+    margin: 20px auto 40px;
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    margin: 50px 0 20px;
+    font-size: 1.4rem;
+  }
+
+  section {
+    margin-bottom: 50px;
+    padding: 0 6px;
+  }
+
+  .section-box.exercicios,
+  .curso,
+  .questao {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  /* Botões ocupam largura total */
+  button,
+  .toggle-btn {
     width: 100%;
+    padding: 14px;
   }
 
-  .section-box.exercicios h3 {
-    font-size: 1.2rem;
-  }
-
-  .section-box.exercicios .opcao {
-    font-size: 0.9rem;
+  .opcao {
     padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  textarea {
+    min-height: 180px;
+    padding: 16px;
+  }
+
+  /* Remove efeitos 3D pesados no celular */
+  header:hover,
+  .curso:hover,
+  .section-box.exercicios:hover,
+  .eixo-box:hover {
+    transform: none;
+  }
+
+  .menu-lateral {
+    width: 85vw;
   }
 }
 
-/* Smartphones pequenos e telas muito estreitas */
+/* ================= CELULAR PEQUENO ================= */
 @media (max-width: 400px) {
-  .section-box.exercicios {
-    padding: 16px 12px;
+  body {
+    padding: 12px;
   }
 
-  .section-box.exercicios h3 {
-    font-size: 1.1rem;
-    margin-top: 16px;
-    margin-bottom: 8px;
+  h1 {
+    font-size: 1.6rem;
   }
 
-  .section-box.exercicios .opcao {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .section-box.exercicios,
+  .curso,
+  .questao {
+    padding: 16px;
+  }
+
+  .opcao {
     font-size: 0.85rem;
     padding: 10px 12px;
   }
-}
 
-/* ===== TABELA MODERNA ===== */
-table {
+  textarea {
+    min-height: 150px;
+  }
+}
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
