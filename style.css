@@ -1,24 +1,23 @@
 :root {
-    --bg-main: radial-gradient(circle at top, hsl(127, 51%, 50%), hsl(120, 77%, 59%) 70%);
-    --bg-card: #358355d3;
-    --bg-soft: #3ac42da6;
-  
-    --primary: #7aa2ff;
-    --secondary: hsl(113, 100%, 62%);
-    --accent: #ffd166;
-  
-    --text-main: #f5f7fb;
-    --text-muted: #a9b0c2;
-  
-    --border-soft: rgba(255,255,255,0.08);
-    --shadow-soft: 0 30px 80px rgba(0,0,0,0.65);
-  
-    --blur: blur(18px);
-  
-    --transition-fast: 0.2s ease;
-    --transition-slow: 0.45s cubic-bezier(.4,0,.2,1);
-  }
-  
+  --bg-main: radial-gradient(circle at top, hsl(220, 40%, 12%), hsl(230, 50%, 8%) 70%);
+  --bg-card: rgba(20, 28, 45, 0.85);
+  --bg-soft: rgba(40, 60, 90, 0.65);
+
+  --primary: #4f8cff;
+  --secondary: #3aa0ff;
+  --accent: #ffd166;
+
+  --text-main: #f5f7fb;
+  --text-muted: #9aa4b2;
+
+  --border-soft: rgba(255,255,255,0.06);
+  --shadow-soft: 0 30px 80px rgba(0,0,0,0.7);
+
+  --blur: blur(18px);
+
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.45s cubic-bezier(.4,0,.2,1);
+}
 
 * {
   box-sizing: border-box;
