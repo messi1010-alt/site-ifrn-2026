@@ -1,24 +1,51 @@
 :root {
-  --bg-main: radial-gradient(circle at top, hsl(220, 40%, 12%), hsl(230, 50%, 8%) 70%);
-  --bg-card: rgba(20, 28, 45, 0.85);
-  --bg-soft: rgba(40, 60, 90, 0.65);
+  /* === COLORS (HSL for flexibility) === */
+  --color-bg-h: 225;
+  --color-bg-s: 40%;
+  --color-bg-l: 10%;
 
-  --primary: #4f8cff;
-  --secondary: #3aa0ff;
-  --accent: #ffd166;
+  --color-primary-h: 220;
+  --color-primary-s: 90%;
+  --color-primary-l: 65%;
 
-  --text-main: #f5f7fb;
-  --text-muted: #9aa4b2;
+  --color-accent-h: 45;
+  --color-accent-s: 100%;
+  --color-accent-l: 60%;
 
-  --border-soft: rgba(255,255,255,0.06);
-  --shadow-soft: 0 30px 80px rgba(0,0,0,0.7);
+  /* === BACKGROUNDS === */
+  --bg-main: radial-gradient(
+    circle at top,
+    hsl(var(--color-bg-h), var(--color-bg-s), 14%),
+    hsl(var(--color-bg-h), var(--color-bg-s), 8%) 70%
+  );
 
-  --blur: blur(18px);
+  --bg-card: hsl(var(--color-bg-h), 30%, 18% / 0.75);
+  --bg-soft: hsl(var(--color-bg-h), 35%, 25% / 0.55);
 
-  --transition-fast: 0.2s ease;
-  --transition-slow: 0.45s cubic-bezier(.4,0,.2,1);
+  /* === BRAND COLORS === */
+  --primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --primary-hover: hsl(var(--color-primary-h), var(--color-primary-s), 72%);
+  --secondary: hsl(var(--color-primary-h), 85%, 58%);
+  --accent: hsl(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l));
+
+  /* === TEXT === */
+  --text-main: hsl(210, 20%, 96%);
+  --text-muted: hsl(215, 15%, 65%);
+
+  /* === UI DETAILS === */
+  --border-soft: hsl(0 0% 100% / 0.08);
+  --shadow-soft: 0 20px 60px hsl(0 0% 0% / 0.6);
+  --shadow-elevated: 0 30px 90px hsl(0 0% 0% / 0.8);
+
+  /* === EFFECTS === */
+  --blur: blur(16px);
+  --radius: 16px;
+
+  /* === TRANSITIONS === */
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --transition-fast: 0.2s var(--ease-standard);
+  --transition-slow: 0.45s var(--ease-standard);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
