@@ -54,9 +54,17 @@
 
 hr {
   border: none;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #5a9bd4, transparent);
-  margin: 40px 0;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #5a9bd4,
+    #1e6fb9,
+    #5a9bd4,
+    transparent
+  );
+  margin: 50px 0;
+  border-radius: 2px;
 }
 
 .formula {
