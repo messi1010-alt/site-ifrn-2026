@@ -52,6 +52,13 @@
   padding: 0;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #5a9bd4, transparent);
+  margin: 40px 0;
+}
+
 .formula {
   background-color: rgba(122, 162, 255, 0.15); /* leve fundo azul */
   border-left: 5px solid #7aa2ff; /* barra lateral colorida */
