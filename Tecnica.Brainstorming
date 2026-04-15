@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brainstorming para Redação</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- MENU -->
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-btn">☰</label>
+
+<nav class="menu-lateral">
+  <h2>Menu</h2>
+  <a href="index.html">Início</a>
+  <a href="#">Redação</a>
+  <a href="#">Técnicas</a>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <h1>Técnica de Brainstorming</h1>
+  <i>Como gerar ideias rapidamente para sua redação</i>
+</header>
+
+<!-- INTRODUÇÃO -->
+<section>
+  <h2>O que é Brainstorming?</h2>
+  <p>
+    O brainstorming é uma técnica usada para gerar o máximo de ideias possível em pouco tempo.
+    Na redação, ele ajuda você a sair do “branco” e encontrar argumentos, exemplos e repertórios.
+  </p>
+
+  <div class="attention">
+    Não tente escrever perfeito no começo. O objetivo do brainstorming é gerar ideias, não julgar.
+  </div>
+</section>
+
+<!-- COMO FAZER -->
+<section>
+  <h2>Como fazer Brainstorming</h2>
+
+  <ul>
+    <li><strong>Leia o tema com atenção</strong> → Entenda exatamente o que está sendo pedido</li>
+    <li><strong>Anote tudo que vier à mente</strong> → Mesmo ideias simples ou incompletas</li>
+    <li><strong>Use palavras-chave</strong> → Não precisa escrever frases completas</li>
+    <li><strong>Não se preocupe com erros</strong> → Foque apenas em gerar conteúdo</li>
+  </ul>
+</section>
+
+<!-- EXEMPLO -->
+<section class="exemplo">
+  <h2>Exemplo de Brainstorming</h2>
+
+  <p><strong>Tema:</strong> Desafios da educação no Brasil</p>
+
+  <div class="formula">
+    Ideias geradas:<br><br>
+    - Falta de investimento<br>
+    - Desigualdade social<br>
+    - Professores desvalorizados<br>
+    - Infraestrutura precária<br>
+    - Tecnologia na educação
+  </div>
+
+  <p>
+    Depois disso, você seleciona as melhores ideias e transforma em argumentos.
+  </p>
+</section>
+
+<!-- ORGANIZAÇÃO -->
+<section>
+  <h2>Como transformar ideias em redação</h2>
+
+  <ul>
+    <li><strong>Escolha 2 ideias principais</strong> → Serão seus parágrafos de desenvolvimento</li>
+    <li><strong>Adicione exemplos</strong> → Pode ser atualidades, história ou dados</li>
+    <li><strong>Relacione com o tema</strong> → Sempre conecte ao problema proposto</li>
+  </ul>
+</section>
+
+<!-- DICAS -->
+<section>
+  <h2>Dicas importantes</h2>
+
+  <ul>
+    <li><strong>Evite travar</strong> → Escreva qualquer coisa primeiro</li>
+    <li><strong>Treine frequentemente</strong> → Quanto mais treinar, mais rápido fica</li>
+    <li><strong>Use repertório</strong> → Filmes, livros e notícias ajudam muito</li>
+  </ul>
+
+  <div class="attention">
+    Brainstorming bem feito pode economizar muito tempo e melhorar sua nota na redação.
+  </div>
+</section>
+
+<!-- PRÁTICA -->
+<section class="section-box exercicios">
+  <h2>Pratique agora</h2>
+
+  <p><strong>Tema:</strong> Uso excessivo da tecnologia</p>
+
+  <p>Faça seu brainstorming abaixo:</p>
+
+  <textarea placeholder="Escreva suas ideias aqui..."></textarea>
+
+  <br><br>
+  <button onclick="alert('Continue praticando!')">Finalizar</button>
+</section>
+
+</body>
+</html>
