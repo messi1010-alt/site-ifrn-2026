@@ -1,194 +1,208 @@
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guia de Estudos IFRN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudos IFRN</title>
 
-<style>
-:root{
-  --primary:#7aa2ff;
-  --secondary:#3fffdc;
-  --gradient:linear-gradient(135deg,var(--primary),var(--secondary));
-  --text:#f5f7fb;
-  --soft:#b8c0da;
-}
+  <style>
+    :root {
+      --primary: #7aa2ff;
+      --secondary: #3fffdc;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --text: #f5f7fb;
+      --soft: #b8c0da;
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body{
-  font-family:Inter,system-ui,Arial;
-  background:#05070f;
-  color:var(--text);
-  overflow-x:hidden;
-}
+    body {
+      font-family: Inter, system-ui, Arial;
+      background: #05070f;
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-/* ===== FUNDO ANIMADO ===== */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle,#172048,#05070f 60%);
-  animation:moveBg 18s linear infinite;
-  z-index:-1;
-}
+    /* ===== FUNDO ANIMADO ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #172048, #05070f 60%);
+      animation: moveBg 18s linear infinite;
+      z-index: -1;
+    }
 
-@keyframes moveBg{
-  from{transform:translate(-10%,-10%)}
-  to{transform:translate(-40%,-40%)}
-}
+    @keyframes moveBg {
+      from {
+        transform: translate(-10%, -10%)
+      }
 
-/* ===== HERO ===== */
-.home{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:30px;
-}
+      to {
+        transform: translate(-40%, -40%)
+      }
+    }
 
-.home-box{
-  max-width:800px;
-  text-align:center;
-  padding:60px 45px;
-  border-radius:28px;
-  backdrop-filter:blur(18px);
-  background:rgba(25,30,55,.7);
-  border:1px solid rgba(255,255,255,.08);
-  animation:fadeUp 1s ease;
-}
+    /* ===== HERO ===== */
+    .home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
 
-h1{
-  font-size:clamp(2rem,5vw,2.8rem);
-  margin-bottom:20px;
-  background:var(--gradient);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
+    .home-box {
+      max-width: 800px;
+      text-align: center;
+      padding: 60px 45px;
+      border-radius: 28px;
+      backdrop-filter: blur(18px);
+      background: rgba(25, 30, 55, .7);
+      border: 1px solid rgba(255, 255, 255, .08);
+      animation: fadeUp 1s ease;
+    }
 
-p{
-  color:var(--soft);
-  margin-bottom:35px;
-  line-height:1.6;
-}
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* ===== BOTÃO ===== */
-button{
-  padding:16px 40px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:600;
-  background:var(--gradient);
-  color:#05070f;
-  font-size:1rem;
-  transition:.3s;
-}
+    p {
+      color: var(--soft);
+      margin-bottom: 35px;
+      line-height: 1.6;
+    }
 
-button:hover{
-  transform:translateY(-4px) scale(1.05);
-}
+    /* ===== BOTÃO ===== */
+    button {
+      padding: 16px 40px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      background: var(--gradient);
+      color: #05070f;
+      font-size: 1rem;
+      transition: .3s;
+    }
 
-/* ===== LINKS GRID ===== */
-#links-container{
-  margin-top:35px;
-  display:none;
-  gap:15px;
-}
+    button:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
 
-#links-container.show{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  animation:fadeUp .6s ease;
-}
+    /* ===== LINKS GRID ===== */
+    #links-container {
+      margin-top: 35px;
+      display: none;
+      gap: 15px;
+    }
 
-/* ===== CARDS ===== */
-#links-container a{
-  text-decoration:none;
-  color:var(--text);
-  padding:18px;
-  border-radius:18px;
-  background:rgba(122,162,255,.15);
-  transition:.25s;
-  backdrop-filter:blur(10px);
-}
+    #links-container.show {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      animation: fadeUp .6s ease;
+    }
 
-#links-container a:hover{
-  background:rgba(122,162,255,.35);
-  transform:translateY(-5px) scale(1.03);
-}
+    /* ===== CARDS ===== */
+    #links-container a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(122, 162, 255, .15);
+      transition: .25s;
+      backdrop-filter: blur(10px);
+    }
 
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:18px;
-  color:#aaa;
-}
+    #links-container a:hover {
+      background: rgba(122, 162, 255, .35);
+      transform: translateY(-5px) scale(1.03);
+    }
 
-/* ===== ANIMAÇÃO ===== */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
-}
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 18px;
+      color: #aaa;
+    }
 
-/* ===== RESPONSIVO ===== */
-@media(max-width:480px){
-  .home-box{
-    padding:35px 20px;
-  }
-}
-</style>
+    /* ===== ANIMAÇÃO ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media(max-width:480px) {
+      .home-box {
+        padding: 35px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<main>
-<section class="home">
-<div class="home-box">
+  <main>
+    <section class="home">
+      <div class="home-box">
 
-<h1>Guia de Estudos IFRN</h1>
+        <h1>Guia de Estudos IFRN</h1>
 
-<p>
-Material explicativo e prático com Língua Porutguesa,
-Matemática e Produção Textual (Artigo de opinião)
-para o Exame de Seleção do IFRN 2026.
-</p>
+        <p>
+          Material explicativo e prático com Língua Porutguesa,
+          Matemática e Produção Textual (Artigo de opinião)
+          para o Exame de Seleção do IFRN 2026.
+        </p>
 
-<button id="show-links-btn">Acessar conteúdos</button>
+        <button id="show-links-btn">Acessar conteúdos</button>
 
-<div id="links-container">
-<a href="portugues.html">📖 Língua Portuguesa</a>
-<a href="matematica.html">🧮 Matemática</a>
-<a href="redacao.html">📝 Redação</a>
-<a href="exercicios.html">✅ Exercícios</a>
+        <div id="links-container">
+          <a href="portugues.html">📖 Língua Portuguesa</a>
+          <a href="matematica.html">🧮 Matemática</a>
+          <a href="redacao.html">📝 Redação</a>
+          <a href="exercicios.html">✅ Exercícios</a>
 
-</div>
+        </div>
 
-</div>
-</section>
-</main>
+      </div>
+    </section>
+  </main>
 
-<footer>
-© 2026 • Guia de Estudos IFRN
-</footer>
+  <footer>
+    © 2026 • Guia de Estudos IFRN
+  </footer>
 
-<script>
-const btn=document.getElementById("show-links-btn");
-const container=document.getElementById("links-container");
+  <script>
+    const btn = document.getElementById("show-links-btn");
+    const container = document.getElementById("links-container");
 
-btn.addEventListener("click",()=>{
-  container.classList.toggle("show");
-  btn.textContent=
-    container.classList.contains("show")
-      ?"Fechar conteúdos"
-      :"Acessar conteúdos";
-});
-</script>
+    btn.addEventListener("click", () => {
+      container.classList.toggle("show");
+      btn.textContent =
+        container.classList.contains("show")
+          ? "Fechar conteúdos"
+          : "Acessar conteúdos";
+    });
+  </script>
 
 </body>
+
 </html>
